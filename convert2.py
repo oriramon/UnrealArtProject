@@ -1,7 +1,5 @@
-import json
 import requests
 import os
-#from pydub import AudioSegment
 import sys
 
 
@@ -12,8 +10,6 @@ data = ""
 #Converts json to python dictionary
 request = requests.get('https://infinite-walker-app.onrender.com/getDay/')
 data = request.json()
-# with open('/Users/oriramon/Documents/Unreal Projects/FirstProject/Content/Python/example2.json') as json_file:
-#     data = json.load(json_file)
 
 # Make Directory for current Day
 os.mkdir(f"C:/Users/amir_desktop/Documents/Unreal Projects/BM1/Content/Endpoint/Days/{sys.argv[1]}")
@@ -56,10 +52,6 @@ f = open(f"C:/Users/amir_desktop/Documents/Unreal Projects/BM1/Content/Endpoint/
 f.write(Time)
 f.close()
 
-# # Get Time Stamp Audio
-# URL= data["date_speech_file"]
-# response = requests.get(URL)
-# open(f"/Users/oriramon/Documents/Unreal Projects/FirstProject/Content/Audio/WavFiles/{sys.argv[1]}/time/audio/time.mp3", "wb").write(response.content)
 
 # Get Speech files
 for i in range(3):
